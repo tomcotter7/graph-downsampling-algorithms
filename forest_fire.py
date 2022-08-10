@@ -22,3 +22,9 @@ def forest_fire(graph, sample_size):
         LongTensor: A LongTensor of nodes to include in the subgraph
     """
     pass
+
+subset = forest_fire(data, 1)
+
+# %% Run subset
+
+sg = data.subgraph(subset)

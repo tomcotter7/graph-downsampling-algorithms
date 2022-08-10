@@ -2,11 +2,16 @@
 import random
 import numpy as np
 from torch_geometric.datasets import Planetoid
+from torch_geometric import utils
 import torch
+import networkx as nx
 dataset = Planetoid(root='data/Cora', name='Cora')
 
 # %% Initial data setup
 data = dataset[0]
+
+g = utils.to_networkx(data, to_undirected=True)
+nx.draw(g)
 
 
 # %% Random walk function
@@ -46,3 +51,7 @@ subset = random_walk(data, 100)
 
 # %% Run subset
 sg = data.subgraph(subset)
+
+# %% Draw subset
+g = utils.to_networkx(sg, to_undirected=True)
+nx.draw(g)
