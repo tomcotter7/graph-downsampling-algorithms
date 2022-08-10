@@ -3,7 +3,7 @@ import random
 import numpy as np
 from torch_geometric.datasets import Planetoid
 import torch
-dataset = Planetoid(root='~/somewhere/Cora', name='Cora')
+dataset = Planetoid(root='data/Cora', name='Cora')
 
 # %% Initial data setup
 data = dataset[0]
