@@ -17,6 +17,9 @@ def random_walk(graph, sample_size):
     Args:
         graph (Data): A torch_geometric Data object,
         sample_size (int): Number of nodes to sample
+
+    Returns:
+        LongTensor: A LongTensor of nodes to include in the subraph
     """
     x = graph['x']
     # Get the starting node
